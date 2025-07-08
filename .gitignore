@@ -10,7 +10,7 @@ node_modules/
 *.log
 
 # Large or generated files
-*.txt
+
 *.pdf
 *.db
 .DS_Store
