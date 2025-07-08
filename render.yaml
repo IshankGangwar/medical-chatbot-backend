@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: medical-chatbot-api
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn chatbot:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_ENVIRONMENT
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
