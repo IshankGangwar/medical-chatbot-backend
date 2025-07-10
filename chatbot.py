@@ -32,7 +32,7 @@ app.add_middleware(
 def create_retriever():
     pc = Pinecone(api_key=PINECONE_API_KEY)
     index = pc.Index(INDEX_NAME)
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="./models/all-MiniLM-L6-v2")
     vectorstore = PineconeVectorStore(index=index, embedding=embeddings, text_key="text")
     return vectorstore.as_retriever(search_kwargs={"k": 5})
 
@@ -44,8 +44,6 @@ def create_chatbot():
 You are a helpful medical assistant. Use the context below to answer the user's question.
 If the answer is not in the context, say: "Sorry, I don’t have knowledge about that."
 Keep your response under 50–60 words.
-You are a medical assistant. Answer only medical-related queries. If the user asks anything unrelated (like quotes or jokes), politely say you only respond to medical questions.\n\nUser: {question}\nBot
-
 Context:
 {context}
 Question: {question}
