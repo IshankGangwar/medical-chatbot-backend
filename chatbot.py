@@ -8,6 +8,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from langchain.chains import RetrievalQA
+from fastapi.responses import HTMLResponse
 
 # Load environment variables
 load_dotenv()
@@ -69,3 +70,7 @@ async def query(request: Request):
         return {"answer": result["result"]}
     except Exception as e:
         return {"answer": f"Internal error: {str(e)}"}
+
+@app.get("/", response_class=HTMLResponse)
+def root():
+    return "<h2>✅ MediBot backend is live.<br>POST your questions to <code>/query</code>.</h2>"
