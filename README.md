@@ -6,4 +6,4 @@ This is the backend API for MediBot – an AI-powered chatbot that answers **med
 
 ## 🚀 Live API Endpoint (Deployed on Hugging Face Spaces)
 
-https://ishank22-medibot-backend.hf.space/query
+https://huggingface.co/spaces/ishank22/medibot-backend
