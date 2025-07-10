@@ -1,21 +1,10 @@
-# Ignore Python virtual environment
+# Ignore Python env
 medibot/
 __pycache__/
 *.pyc
-*.pyo
 
-# Node & frontend
-chatbot-ui/
-node_modules/
-*.log
-
-# Large or generated files
-
-*.pdf
-*.db
-.DS_Store
+# Ignore secrets
 .env
 
-# IDE/project settings
-.vscode/
-.idea/
+# Ignore Node modules (frontend)
+node_modules/
